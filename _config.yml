@@ -1,3 +1,6 @@
-theme: minima
-name: tktrungna's site
-title: null
+remote_theme: pages-themes/primer@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+title: [Personal notes]
+description: null
