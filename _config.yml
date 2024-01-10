@@ -2,5 +2,5 @@ remote_theme: pages-themes/primer@v0.6.0
 plugins:
 - jekyll-remote-theme
 
-title: [Personal notes]
+title: Personal notes
 description: null
