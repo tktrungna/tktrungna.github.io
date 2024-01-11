@@ -22,6 +22,13 @@ Api could be un-robust and un-predictable due to un-reliable networks and server
 * Client retries to ensure consistency
 * Retry with idempotency and idempotency keys to allow clients to pass a unique value
 * Retry with exponential backoff and random jitter
+Example with Stripe API
+```
+curl https://api.stripe.com/v1/customers \
+  -u sk_test_4eC39HqLyjWDarjtT1zdp7dc: \
+  -H "Idempotency-Key: KG5LxwFBepaKHyUD" \
+  -d description="My First Test Customer (created for API docs at https://www.stripe.com/docs/api)"
+```
 
 ## Reference
 * [Top 6 Most Popular API Architecture Styles with Pros, Cons, and Use Cases](https://dev.to/kanani_nirav/top-6-most-popular-api-architecture-styles-you-need-to-know-with-pros-cons-and-use-cases-564j)
@@ -39,3 +46,4 @@ Api could be un-robust and un-predictable due to un-reliable networks and server
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 * [Designing robust and predictable APIs with idempotency](https://stripe.com/blog/idempotency)
+* [Idempotency and retries with stripe-python](https://www.youtube.com/watch?v=y0ONKsP1LkU&t=17s&ab_channel=StripeDevelopers)
