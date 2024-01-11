@@ -38,6 +38,7 @@ curl https://api.stripe.com/v1/customers \
   * [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
   * Tight coupling, reliable communication, uniform language
+  * [JSON-RPC](https://www.wallarm.com/what/what-is-json-rpc#json__what_is_it_and_how_it_works__) allows for more expressive, less cumbersome API design
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
   * The fundamental problem with RPC is coupling
   * REST style is very easy to guide clients by including control information in representation
