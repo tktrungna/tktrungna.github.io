@@ -17,6 +17,22 @@ Need to check SSE too
 
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OFer-8Eq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/um3l02jna0u8xhii9cde.png" width="50%" height="50%">
 
+### RPC and REST calls comparison
+
+| Operation | RPC | REST |
+|---|---|---|
+| Signup    | **POST** /signup | **POST** /persons |
+| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
+| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+
+<p align="center">
+  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+</p>
+
 ## Idempotent API
 Api could be un-robust and un-predictable due to un-reliable networks and server (more reliable) may still fail. To solve that, we need to design APIs that
 * Client retries to ensure consistency
@@ -44,7 +60,8 @@ curl https://api.stripe.com/v1/customers \
   * REST style is very easy to guide clients by including control information in representation
 * [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Thrift](https://code.facebook.com/posts/1468950976659943/)
+* [Thrift](https://code.facebook.com/posts/1468950976659943/) a cross-language framework for handling RPC, including serialization/deserialization, protocol transport, and server creation
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+* [RPC vs REST](https://imtien.com/software-development/rpc-vs-rest/)
 * [Designing robust and predictable APIs with idempotency](https://stripe.com/blog/idempotency)
 * [Idempotency and retries with stripe-python](https://www.youtube.com/watch?v=y0ONKsP1LkU&t=17s&ab_channel=StripeDevelopers)
